@@ -20,6 +20,13 @@ The system includes role-based permissions supporting members, crew, and adminis
 - **Styling**: Pure CSS with semantic class names
 - **Architecture**: Clean layered architecture with separated concerns
 
+## Screenshots
+![11721757114451_ pic](https://github.com/user-attachments/assets/19c89b31-4edb-4e65-8f4b-eb60ae06b26a)
+![11731757114462_ pic](https://github.com/user-attachments/assets/6de561b2-4a2e-4e80-9cb4-aee60dfb1bf8)
+![11741757114476_ pic](https://github.com/user-attachments/assets/ea3b8370-fd89-4c08-a850-9f144c88c85b)
+![11751757114510_ pic](https://github.com/user-attachments/assets/8e1d678a-a76e-4801-bc5e-e448ee640084)
+![11761757114521_ pic](https://github.com/user-attachments/assets/49c4fa86-3246-467f-bb20-58899fecac16)
+
 ## Architecture
 
 This project follows a clean layered architecture pattern:
