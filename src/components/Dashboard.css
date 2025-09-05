@@ -1,0 +1,273 @@
+   .dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeIn 0.6s ease-out;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .dashboard::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(rgba(255, 255, 255, 0.4), rgba(173, 216, 230, 0.3)),
+      url('/images/dashboard.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .dashboard-nav {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0.75rem;
+    border-radius: 20px;
+    box-shadow: 
+      0 0 0 1px rgba(0, 206, 209, 0.2), 
+      0 8px 32px rgba(70, 130, 180, 0.15); 
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: sticky;
+    top: 100px;
+    z-index: 100;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 1px solid rgba(70, 130, 180, 0.2);
+  }
+  
+  .nav-button {
+    background: transparent;
+    border: 2px solid rgba(0, 206, 209, 0.3);
+    padding: 1rem 2.5rem;
+    font-size: 0.9375rem;
+    color: #003366; 
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    white-space: nowrap;
+    min-width: max-content;
+    overflow: hidden;
+  }
+  
+  .nav-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(0, 206, 209, 0.1) 0%, 
+      rgba(70, 130, 180, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+  }
+  
+  .nav-button:hover {
+    color: #00CED1; 
+    border-color: rgba(0, 206, 209, 0.5);
+    background: rgba(0, 206, 209, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 206, 209, 0.2);
+  }
+  
+  .nav-button:hover::before {
+    opacity: 1;
+  }
+  
+  .nav-button.active {
+    color: white;
+    background: linear-gradient(135deg, #00CED1 0%, #4682B4 100%);
+    box-shadow: 
+      0 4px 20px rgba(0, 206, 209, 0.3),
+      inset 0 0 20px rgba(255, 255, 255, 0.2);
+    border-color: transparent;
+  }
+  
+  .dashboard-content {
+    background: rgba(255, 255, 255, 0.92); 
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 
+      0 0 0 1px rgba(70, 130, 180, 0.2),
+      0 20px 60px rgba(0, 82, 136, 0.12);
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 100%;
+    border: 1px solid rgba(173, 216, 230, 0.3);
+  }
+  
+  
+  .dashboard-content::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, 
+      rgba(0, 206, 209, 0.05) 0%, 
+      transparent 70%);
+    animation: waveMove 20s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes waveMove {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    50% { transform: rotate(180deg) translateY(-50px); }
+  }
+  
+  .fleet-management {
+    text-align: center;
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .fleet-management h2 {
+    color: #003366;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #003366 0%, #00CED1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 51, 102, 0.1);
+  }
+  
+  .fleet-management p {
+    color: #4682B4; 
+    font-size: 1.125rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  .fleet-management::before {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+    background: radial-gradient(circle at 30% 30%, 
+      rgba(0, 206, 209, 0.2), 
+      transparent 70%);
+    border-radius: 50%;
+    position: relative;
+    animation: pulse 3s ease-in-out infinite;
+    border: 2px solid rgba(70, 130, 180, 0.2);
+  }
+  
+  @keyframes pulse {
+    0%, 100% { 
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(0, 206, 209, 0.4);
+    }
+    50% { 
+      transform: scale(1.05);
+      box-shadow: 0 0 0 30px rgba(0, 206, 209, 0);
+    }
+  }
+  
+  .fleet-management::after {
+    content: '⚓';
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #4682B4;
+    opacity: 0.2;
+    animation: anchorFloat 4s ease-in-out infinite;
+  }
+  
+  @keyframes anchorFloat {
+    0%, 100% { transform: translateX(-50%) translateY(0) rotate(-5deg); }
+    50% { transform: translateX(-50%) translateY(-10px) rotate(5deg); }
+  }
+  
+  .dashboard-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,56 C150,100 350,0 600,56 C850,112 1050,0 1200,56 L1200,120 L0,120 Z' fill='%2300CED1' opacity='0.1'/%3E%3C/svg%3E");
+    background-size: cover;
+    pointer-events: none;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard {
+      padding: 1rem;
+    }
+    
+    .dashboard-nav {
+      gap: 0.5rem;
+      padding: 0.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      top: auto;
+      justify-content: flex-start;
+    }
+    
+    .nav-button {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    
+    .dashboard-content {
+      padding: 2rem 1.5rem;
+      border-radius: 20px;
+    }
+    
+    .fleet-management h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  .app-container,
+  .main-container,
+  #root > div {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
